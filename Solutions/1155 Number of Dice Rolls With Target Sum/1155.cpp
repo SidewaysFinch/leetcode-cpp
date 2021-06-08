@@ -1,7 +1,7 @@
 #include <iostream>
+#include <vector>
 /* Brute force solution
  * runs out of execution time
-*/
 class Solution {
 public:
     int numRollsToTarget(int d, int f, int target) {
@@ -25,10 +25,36 @@ public:
     }
 };
 
+
+*/
+/* New Dynamic Programming approach: map states to an array
+ * This is similar to our brute force method, but much faster as
+ * a) it does not exponentially grow as 
+*/
+class Solution {
+public:
+    int numRollsToTarget(int d, int f, int target) {
+        std::vector<std::vector<int>> statemap(d+1, std::vector<int>(target+1, 0));
+        statemap[0][0] = 1;
+        for (int dice = 1; dice <= d; dice++) {
+            for (int sum = 1; sum <= target; sum++) {
+                for (int k = 1; k <= f; k++) {
+                    //If our target is reachable
+                    if (k <= sum) {
+                        //Add from the previous state (1 less die, sum - this roll)
+                        statemap[dice][sum] = statemap[dice][sum] % (1000000007) + statemap[dice-1][sum-k] % (1000000007);
+                    }
+                }
+            }
+        }
+        return statemap[d][target];
+    }
+};
+
 int main() {
-    int d = 15;
-    int f = 15;
-    int target = 250;
+    int d = 30;
+    int f = 30;
+    int target = 500;
 
 
     Solution s;
