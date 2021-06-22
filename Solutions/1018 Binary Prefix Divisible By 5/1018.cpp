@@ -2,9 +2,8 @@
 #include <iostream>
 #include <vector>
 
-
-//Bruteforce solution
-//Stops working due to size limit of numbers
+// Bruteforce solution
+// Stops working due to size limit of numbers
 /*
 class Solution {
 public:
@@ -20,13 +19,16 @@ public:
     }
 };*/
 
-class Solution {
-public:
-    std::vector<bool> prefixesDivBy5(std::vector<int>& nums) {
+class Solution
+{
+  public:
+    std::vector<bool> prefixesDivBy5(std::vector<int> &nums)
+    {
         int calc = 0;
         std::vector<bool> answer;
 
-        for (auto i = 0; i < nums.size(); i++) {
+        for (auto i = 0; i < nums.size(); i++)
+        {
             calc = (calc * 2 + nums.at(i)) % 5;
             answer.push_back(!calc);
         }
@@ -34,14 +36,17 @@ public:
     }
 };
 
-int main() {
-    std::vector<int> nums = {1,0,0,1,0,1,0,0,1,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0,1,0,0,0,0,1,1,0,1,0,0,0,1};
+int main()
+{
+    std::vector<int> nums = {1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                             0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1};
     std::vector<bool> ans;
     Solution s;
 
     ans = s.prefixesDivBy5(nums);
-    
-    for (auto i = 0; i < nums.size(); i++) {
+
+    for (auto i = 0; i < nums.size(); i++)
+    {
         std::cout << ans.at(i) << " ";
     }
 }
