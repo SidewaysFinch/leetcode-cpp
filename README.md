@@ -5,6 +5,7 @@ Repo for my Leetcode solutions.
 
 | # | Title | Solution |
  --- | --- | ---
+| 611 | [Valid Triangle Number](https://leetcode.com/problems/valid-triangle-number/) | [CPP](https://github.com/SidewaysFinch/leetcode-cpp/tree/main/Solutions/611%20Valid%20Triangle%20Number) |
 | 723 | [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/) | [CPP](https://github.com/SidewaysFinch/leetcode-cpp/tree/main/Solutions/724%20Find%20Pivot%20Index) |
 | 910 | [Smallest Range II](https://leetcode.com/problems/smallest-range-ii/) | [CPP](https://github.com/SidewaysFinch/leetcode-cpp/tree/main/Solutions/910%20Smallest%20Range%20II) |
 | 1018 | [Binary Prefix Divisible By 5](https://leetcode.com/problems/binary-prefix-divisible-by-5/) | [CPP](https://github.com/SidewaysFinch/leetcode-cpp/tree/main/Solutions/1018%Binary%20Prefix%20Divisible%20By%205) |
